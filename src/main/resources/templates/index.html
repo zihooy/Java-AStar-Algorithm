@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/header::header"></head>
+<body class="w-100 h-100 position-absolute">
+<div th:replace="layout/top::top"></div>
+<div class="w-100 h-100" style="position: relative; margin-top: 0px">
+    <div class="bg-image w-100 h-100 p-5 text-center shadow-1-strong rounded mb-5 text-white"
+         style="height: 650px; background-size: contain; background-image: url(/img/background.jpg);">
+        <button type="button" class="btn btn-primary"
+                th:onclick="|location.href='@{/main}'|"
+        >시작하기</button>
+    </div>
+</div>
+</body>
+
+</html>

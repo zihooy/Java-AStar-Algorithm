@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/header::header"></head>
+<body class="w-100 h-100 position-absolute">
+<div th:replace="layout/top::top"></div>
+<div class="map_wrap w-100 h-100" style="position: relative; margin-top: 0px">
+    <div id="map" class="w-100" style="height:100%;">
+        <div class="d-flex justify-content-around align-items-center m-1" style="position: absolute; z-index:999;">
+            <div>
+                <button type="button" class="btn w-33 btn-light border-primary m-2 fw-bold" onclick="onClickEventGetPlace('BK9')">🏛 은행 찾기</button>
+                <button type="button" class="btn w-33 btn-light border-primary m-2 fw-bold" onclick="onClickEventGetPlace('PO3')">🚓 경찰서 찾기</button>
+                <button type="button" class="btn w-33 btn-light border-success m-2 fw-bold" onclick="onClickEventPostArrest('dijkstra')">[Dijkstra] 🗡 체포</button>
+                <button type="button" class="btn w-33 btn-light border-success m-2 fw-bold" onclick="onClickEventPostArrest('astar')">[A-Star] 🗡 체포</button>
+                <button type="button" class="btn w-33 btn-light border-success m-2 fw-bold" onclick="onClickEventPostArrest('bstar')">[B-Star] 🗡 체포</button>
+                <button type="button" class="btn w-33 btn-light border-success m-2 fw-bold" onclick="onClickEventPostArrest('cstar')">[C-Star] 🗡 체포</button>
+                <button type="button" class="btn w-33 btn-light border-success m-2 fw-bold" onclick="onClickEventGetNodes()">🔎 전체 노드 조회</button>
+                <button type="button" class="btn w-33 btn-danger m-2" onclick="onClickEventClear()">🗑 초기화</button>
+            </div>
+        </div>
+
+        <!--//추가-->
+        <div class="mt-5" style="position: absolute; z-index:999;">
+            <div class="card mt-5 m-5" style="width: 12rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-around align-items-center" style="background-color: red">
+                        <div class="fw-semibold" style="font-size: 12px; color: white;" >
+                            Dijkstra
+                        </div>
+                        <div id='D_cost' class="fw-semibold" style="font-size: 12px; color: white;">
+                            0.00
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-around align-items-center" style="background-color: orange;">
+                        <div class="fw-semibold" style="font-size: 12px; color: white;">
+                            A-Star
+                        </div>
+                        <div id='A_cost' class="fw-semibold" style="font-size: 12px; color: white;">
+                            0.00
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-around align-items-center" style="background-color: blue">
+                        <div class="fw-semibold" style="font-size: 12px; color:white;" >
+                            B-Star
+                        </div>
+                        <div id='B_cost' class="fw-semibold" style="font-size: 12px; color:white;">
+                            0.00
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-around align-items-center" style="background-color: green">
+                        <div class="fw-semibold" style="font-size: 12px; color:white;">
+                            C-Star
+                        </div>
+                        <div id='C_cost' class="fw-semibold" style="font-size: 12px; color:white;">
+                            0.00
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=06b1aaa9cbde775806f4893175d001f7"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script th:src="@{js/kakaomap.js}"></script>
+</body>
+</html>
