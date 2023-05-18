@@ -1,6 +1,27 @@
 # Java-AStar-Algorithm
 Implement A* Algorithm Using Java, OSM, Kakaomap API
 
+<p align="center">
+
+![May-18-2023 20-34-12](https://github.com/zihooy/Java-AStar-Algorithm/assets/101122651/e4332089-8d27-4431-9e95-df2028acdaf9)
+
+   
+  <br>
+  
+  ![image](https://github.com/zihooy/Java-Socket-Programming/assets/101122651/b8063537-f025-421b-9917-042d14dc4e4b)
+
+  ![image](https://github.com/zihooy/Java-Socket-Programming/assets/101122651/beb52bfa-6bbb-46f9-a2e1-3cefdfac4837)
+
+   <br>
+
+</p>
+
+## 프로젝트 소개
+
+<p align="justify">
+    2일동안 A* 알고리즘을 활용하여 실제 지도(강남구)위에 경찰이 도둑을 추적하기 위해 최단 경로를 표현하였습니다.
+    추가적으로 A* 알고리즘을 응용하여 B*, C* 알고리즘을 만들었습니다.
+</p>
 
 - 브레인스토밍
     - A* 알고리즘을 구현하는 방식에 대해 토의
